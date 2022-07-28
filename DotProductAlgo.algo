@@ -1,0 +1,84 @@
+PROCEDURE dot_product(v1,v2 : ARRAY_OF FLOAT, VAR ps : FLOAT:=0) 
+
+BEGIN
+    FOR i FROM 0 TO length(v1)-1 DO
+        ps:=v1[i]*v2[i]
+        read(ps)
+    END_FOR
+END
+
+PROCEDURE pair_vect(VAR n:INTEGER)
+
+BEGIN
+    REPEAT
+        read(n);
+    UNTIL (n%2=0);
+END
+
+ALGORITHM product
+VAR
+    ps_array : ARRAY_OF FLOAT[50]
+    v1 : ARRAY_OF FLOAT
+    v2 : ARRAY_OF FLOAT
+    i,j: INTEGER
+    n: INTEGER
+BEGIN
+    WHILE (pair_vect(n):= 0) DO
+    FOR i FROM 0 TO lenght(ps_array)-1 DO
+        write ('vecteur',i+1, ps_array[i])
+    END_FOR
+    REPEAT
+    ps:=ps+v1[i]*v2[j];
+    i:=0;
+    j:=i+1;
+    UNTIL((j<v2.length)or(i<v1.length));
+    IF (ps=0) THEN
+    write("two vectors are ortoghonals");
+    END_IF
+    END_WHILE
+END
+
+
+//function
+
+FUNCTION dot_product(v1,v2 : ARRAY_OF FLOAT, VAR ps : FLOAT:=0) : FLOAT
+
+BEGIN
+    FOR i FROM 0 TO length(v1)-1 DO
+        ps:=v1[i]*v2[i]
+        return (ps)
+    END_FOR
+END
+
+FUNCTION pair_vect(VAR n:INTEGER) : INTEGER
+
+BEGIN
+    IF (n%2=0) DO
+        return(n);
+END
+
+ALGORITHM product
+VAR
+    ps_array : ARRAY_OF FLOAT[50]
+    v1 : ARRAY_OF FLOAT
+    v2 : ARRAY_OF FLOAT
+    i,j: INTEGER
+    n: INTEGER
+BEGIN
+    pair_vect(n)
+    dot_product(ps)
+
+    WHILE (pair_vect(n):= 0) DO
+    FOR i FROM 0 TO lenght(ps_array)-1 DO
+        write ('vecteur',i+1, ps_array[i])
+    END_FOR
+    REPEAT
+    ps:=dot_product(v1,v2);
+    i:=0;
+    j:=i+1;
+    UNTIL((j<v2.length)or(i<v1.length));
+    IF (ps=0) THEN
+    write("two vectors are ortoghonals");
+    END_IF
+    END_WHILE
+END
